@@ -77,4 +77,25 @@ public class Magasin {
     public String getAdresse() {
         return adresse;
     }
+
+    // Méthode pour supprimer un produit du magasin
+    public boolean supprimerProduit(Produit produitASupprimer) {
+        for (int i = 0; i < nombreProduits; i++) {
+            if (produits[i].comparer(produitASupprimer)) { // Utilisation de la méthode comparer
+                // Décaler les produits à gauche pour supprimer le produit trouvé
+                for (int j = i; j < nombreProduits - 1; j++) {
+                    produits[j] = produits[j + 1];
+                }
+                produits[nombreProduits - 1] = null; // Optionnel : nettoyer la dernière position
+                nombreProduits--; // Décrémenter le compteur de produits
+                totalProduits--; // Décrémenter le compteur de produits total
+                System.out.println("Produit supprimé : " + produitASupprimer.libelle);
+                return true; // Produit supprimé avec succès
+            }
+        }
+        System.out.println("Produit non trouvé dans le magasin.");
+        return false; // Produit non trouvé
+    }
+
+
 }

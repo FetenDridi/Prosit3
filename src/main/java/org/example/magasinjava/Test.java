@@ -36,6 +36,17 @@ public class Test {
         System.out.println("Recherche de p3 dans magasin2 : " + magasin2.chercherProduit(p3)); // true
         System.out.println("Recherche de p1 dans magasin2 : " + magasin2.chercherProduit(p1)); // false
 
+        // Tentative de suppression d'un produit
+        boolean suppressionP1 = magasin1.supprimerProduit(p1); // Suppression de p1 dans magasin1
+        if (suppressionP1) {
+            System.out.println("Produit " + p1.libelle + " supprimé avec succès dans magasin1.");
+        } else {
+            System.out.println("Échec de la suppression du produit " + p1.libelle + " dans magasin1.");
+        }
+
+        // Afficher le magasin après la suppression
+        magasin1.afficherMagasin(); // Vérifier l'état du magasin après la suppression
+
         // Comparaison des magasins
         Magasin plusGrandMagasin = Magasin.comparerMagasins(magasin1, magasin2);
         if (plusGrandMagasin != null) {
@@ -43,4 +54,3 @@ public class Test {
         }
     }
 }
-

@@ -72,6 +72,8 @@ public class Test {
             System.out.println("Les employés ne sont pas égaux.");
         }
 
+        magasin1.afficherNbrEmployesParType();
+
 
 
     }}
